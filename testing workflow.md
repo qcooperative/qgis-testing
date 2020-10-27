@@ -71,8 +71,11 @@ To encourage systematic testing and track its progress for each release, we setu
 
 ## Tester plugin
 
+The Tester plugin is a tool to help test QGIS core and plugins' functionality. It allows to run automatic and semi-automated tests. The first type of tests runs without the user intervention. The second also includes step-by-step instructions to perform manual or verification tasks.
 
-## Core tests plugin
+The Tester plugin is available from the QGIS Official Plugins Repository at <https://plugins.qgis.org>. The plugin currently is in the experimental state, so to install it you should enable experimental plugins in the QGIS Plugin Manager. Note that Tester plugin itself does not contain any tests, the tests are added by installing additional plugins containing tests for specific QGIS functionality. For example, to test QGIS core functionality it is necessary to install Core Tests plugin described below.
+
+## Core Tests plugin
 
 This is a supplementary plugin containing some tests for QGIS core functionality.
 

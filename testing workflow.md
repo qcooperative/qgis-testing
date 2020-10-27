@@ -62,11 +62,11 @@ To encourage systematic testing and track its progress for each release, we setu
 
 ### Find test cases
 
+
 ### How to run a test
 
+
 ### How to report an issue
-
-
 
 
 ## Tester plugin
@@ -75,9 +75,37 @@ The Tester plugin is a tool to help test QGIS core and plugins' functionality. I
 
 The Tester plugin is available from the QGIS Official Plugins Repository at <https://plugins.qgis.org>. The plugin currently is in the experimental state, so to install it you should enable experimental plugins in the QGIS Plugin Manager. Note that Tester plugin itself does not contain any tests, the tests are added by installing additional plugins containing tests for specific QGIS functionality. For example, to test QGIS core functionality it is necessary to install Core Tests plugin described below.
 
+### Testing with Tester plugin
+
+We will assume that both Tester plugin and plugins with tests are already installed.
+
+To start a test cycle, open Tester plugin from the menu **Plugins > Tester > Start testing**. The **Test selector** window will be shown with the available tests grouped by categories.
+
+![Test Selector!](/images/test-selector.png)
+
+The list of available tests depends on the installed plugins with tests and can be different across installations and versions.
+
+Inside each category there are two sub-categories: one for fully automated tests and another one with semi-automated tests. Select the tests you want to run with mouse or using one of the buttons at the top of the dialog and then press *Run Selected Test* button. The **Test Selector** will be closed and in the upper part of the QGIS map canvas, you will see the **Tester Plugin** dockable panel.
+
+![Tester Plugin Panel!](/images/tester-plugin-panel.png)
+
+At the top of the panel a name of the currently running test is shown. Also there are two buttons:
+
+* **Restart Test** to restart currently running test
+* **Skip Test** to skip currently running test and start next test (if any)
+* **Cancel Testing** to cancel current test cycle
+
+Below there is a the text area where a description of the current step of the running test is shown. At the right there are several buttons:
+
+* **Next step**
+* **Test Passes**
+* **Test Fails**
+
+If the step is automated (that is, if no user interaction is required during this step), the panel will be disabled and all necessary actions will be performed by the Tester plugin. Otherwise, the panel will show a description of the task that the test expects you to perform. This can be some UI interaction or visual check of the output/results.
+
 ## Core Tests plugin
 
-This is a supplementary plugin containing some tests for QGIS core functionality.
+This is a supplementary plugin containing some tests for the QGIS core functionality.
 
 The Core Tests plugin is available from the QGIS Official Plugins Repository at <https://plugins.qgis.org>. It is only useful when installed together with the Tester plugin.
 

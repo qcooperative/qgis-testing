@@ -73,3 +73,14 @@ To encourage systematic testing and track its progress for each release, we setu
 
 
 ## Core tests plugin
+
+This is a supplementary plugin containing some tests for QGIS core functionality.
+
+The Core Tests plugin is available from the QGIS Official Plugins Repository at <https://plugins.qgis.org>. It is only useful when installed together with the Tester plugin.
+
+### Available tests
+
+Currently Core Tests plugin contains tests for the following issues:
+
+* [#26327](https://github.com/qgis/QGIS/issues/26327) Changes made in Advanced Settings Editor are not saved
+* [#36264](https://github.com/qgis/QGIS/issues/36264) Adding WMTS layer from the Browser panel fails

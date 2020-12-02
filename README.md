@@ -58,10 +58,28 @@ To create a new profile, in the menu select **Settings > User profiles > New pro
 
 ## Testing Management System (Kiwi CMS)
 
-To encourage systematic testing and track its progress for each release, we setup a Kiwi CMS instance. The software allows to describe test cases step by step, organize test plans per release, assign test executions, and log test execution results.
+To encourage systematic testing and track its progress for each release, we have setup a Kiwi CMS instance (called a tenant) in https://qgis.tenant.kiwitcms.org/. This open source software allows to describe test cases step by step, organize test plans per release, assign test executions, and log test execution results.
 
-### Find test cases
+### Register in QGIS tenant
 
+If you want to participate on QGIS testing effort, you should register on the QGIS tenant. The easiest way is to use your Github account to register and login. Go to the link above a select the option Continue with Github in the lower left corner of the page.
+
+Once you are registered on kiwitcms, open a ticket on the https://github.com/qcooperative/qgis-testing repository requesting administrators access to the QGIS tenant.
+
+### Test cases
+
+A **test case** describes the steps or actions to reproduce a certain situation and its expected results. In QGIS testing it should provide instructions for testers to follow. For example, describe which data sample or project to load into QGIS, which steps to open, configure and execute a specific tool, and what are the expected outcomes or outputs.
+
+You can find all existing test cases by going to the menu **Search > Search test cases**. Then, you can open a test case by clicking its name under the `Summary` column.
+
+Currently, we have a limited set of test cases available, but **anyone with access to the QGIS tenant can create additional tests cases**. Because it's impossible to test all QGIS functionality in each release, we encourage the creation of new test cases, either to test possible regressions, generally reported before as bugs, or to promote testing around a new functionality.
+
+Reinforcing what as been said before, these test cases should not be a replacement for in-code unit tests, but a complement for situations were unit tests were not possible to implement because of the need to too many user interaction.
+
+Test cases should be added to one or more test plans, so that they can be executed and reported,
+
+
+### Adding test cases to
 
 ### How to run a test
 

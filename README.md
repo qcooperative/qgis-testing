@@ -74,21 +74,58 @@ You can find all existing test cases by going to the menu **Search > Search test
 
 Currently, we have a limited set of test cases available, but **anyone with access to the QGIS tenant can create additional tests cases**. Because it's impossible to test all QGIS functionality in each release, we encourage the creation of new test cases, either to test possible regressions, generally reported before as bugs, or to promote testing around a new functionality.
 
+You can create new test cases in the **Testing > New test case** or from a Test plan.
+
+Test cases need to be added to one or more test plans, so that they can be executed and reported, this can be done in the test case page, under the **Test plans** panel or in the Test plan page.
+
+---
+
+**NOTE**
+
 Reinforcing what as been said before, these test cases should not be a replacement for in-code unit tests, but a complement for situations were unit tests were not possible to implement because of the need to too many user interaction.
 
-Test cases should be added to one or more test plans, so that they can be executed and reported,
+---
 
+### Test plans
 
-### Adding test cases to
+A **Test plan** are a group of several tests cases. This allows optimizing the testing workflow by gathering related tests together. Tests can be organized by test type (regression tests, new features, smoke tests) or by component (Attribute table, 3D, Processing framework). (Note: We still need to determine what will work better for the QGIS project)
 
-### How to run a test
+You can find existing test cases in the **Search > Search test plan** menu.
 
+From the test cases page, you can add existing test cases or create new ones directly.
 
-### How to report an issue
+Once a test plan is ready, for each release or build, you can create a test run based on its test cases list and assign the test run to a particular tester.
 
+The same test plan can/will be used for several test run. For example, even for the same QGIS build/release, there should be a test run for each main operating system (Windows, OSX, Linux).
+
+### Test runs
+
+**Test runs** are originated from test cases and allows to register the execution of the chosen test cases by a tester using a particular QGIS build and operating system.
+
+As the tester follows the instructions of each test case, he marks the status or result of the execution and moves to the next test.
+
+In case of failure, **the tester should report the issue on QGIS\QGIS github repository**. If the test case is a regression test, then the link to the original issue should be available in the test (later we will setup a kiwi\g.ithub integration that will make the report easier)
 
 ## Tester plugin
 
 The Tester plugin is a tool to help test QGIS core and plugins' functionality. It allows to run automatic and semi-automated tests. The first type of tests runs without the user intervention. The second also includes step-by-step instructions to perform manual or verification tasks.
 
+The plugin will be used in test cases whenever possible to make testing more convenient and fast
+
 For more information about its usage see [this page](tester-plugin.md).
+
+## Suggested Workflows
+
+### Regression tests
+
+* When a severe bug (a regression, crash or data loss) is fixed, if the developer finds necessary, a new regression test case can be included in a test plan.
+* The test run should be executed as soon an possible using the next available build (nightly or weekly build) to allow fast reporting back.
+* If the test fails, the tester reports back in the related github issue, allowing the developer to recheck the situation and apply a better fix.
+* The test should only be executed again when asked/suggested by the developer.
+* If test passes, if possible, it should be tested again during the feature freeze period of a main release. The idea it to  make sure that new feature or bug fixes haven't affected the applied fix.
+
+### Functionality tests
+
+* When new features are added, if the developer finds necessary, a new functionality test can be created to allow more systematic testing.
+* ...
+

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document aims serves as a reference to anyone willing to participate in the QGIS Manual testing effort. It has information on how to setup a clean testing environment, how to use the testing management system (kiwi CMS), and how to create new test cases.
+This document aims serves as a reference to anyone willing to participate in the QGIS Manual testing effort. It has information on how to setup a clean testing environment, how to use the testing management system (Kiwi TCMS), and how to create new test cases.
 
 ## What is manual testing
 
@@ -56,15 +56,15 @@ The virtual machine setup requires a significant amount of time to prepare and o
 
 To create a new profile, in the menu select **Settings > User profiles > New profile...**
 
-## Testing Management System (Kiwi CMS)
+## Testing Management System (Kiwi TCMS)
 
-To encourage systematic testing and track its progress for each release, we have setup a Kiwi CMS instance (called a tenant) in https://qgis.tenant.kiwitcms.org/. This open source software allows to describe test cases step by step, organize test plans per release, assign test executions, and log test execution results.
+To encourage systematic testing and track its progress for each release, we have setup a Kiwi TCMS instance (called a tenant) in https://qgis.tenant.kiwitcms.org/. This open source software allows to describe test cases step by step, organize test plans per release, assign test executions, and log test execution results.
 
 ### Register in QGIS tenant
 
 If you want to participate on QGIS testing effort, you should register on the QGIS tenant. The easiest way is to use your Github account to register and login. Go to the link above a select the option Continue with Github in the lower left corner of the page.
 
-Once you are registered on kiwitcms, open a ticket on the https://github.com/qcooperative/qgis-testing repository requesting administrators access to the QGIS tenant.
+Once you are registered with Kiwi TCMS, open a ticket on the https://github.com/qcooperative/qgis-testing repository requesting administrators access to the QGIS tenant.
 
 ### Test cases
 
@@ -104,7 +104,7 @@ The same test plan can/will be used for several test run. For example, even for 
 
 As the tester follows the instructions of each test case, he marks the status or result of the execution and moves to the next test.
 
-In case of failure, **the tester should report the issue on QGIS\QGIS github repository**. If the test case is a regression test, then the link to the original issue should be available in the test (later we will setup a kiwi\g.ithub integration that will make the report easier)
+In case of failure, **the tester should report the issue on QGIS\QGIS github repository**. If the test case is a regression test, then the link to the original issue should be available in the test (later we will setup a Kiwi TCMS\github integration that will make the report easier)
 
 ## Tester plugin
 

@@ -13,7 +13,7 @@ QGIS code is largely covered by automatic tests provided by unit tests. This is 
 - Specific workflows
 - Monkey testings (Ad hoc functionality tests for new features)
 
-## Setup an clean testing environment
+## Setup a clean testing environment
 
 Ideally, manual testing should be done in the most clean environment as possible. That is:
 
@@ -42,7 +42,7 @@ The optimal way to achieve a clean environment is by using virtual machines with
 
 2. Make sure to update the operating system applying all available updates at the moment. This may require several reboots
 3. Install any additional software to help testing (e.g. better text editor, better browser, etc...)
-4. Create and setup a shared folder to share files between your host machine and the VM. Use this folder to store sample data and the installers, this helps reducing the VMs size and allow you to re-use those files in other VMs.
+4. Create and setup a shared folder to share files between your host machine and the VM. Use this folder to store sample data and the installers, this helps reducing the VMs size and allows you to re-use those files in other VMs.
 5. Create a VM snapshot to store this clean and updated state (this way you can come back to it later to prepare a new test cycle or use it to test QGIS installation procedures)
 6. Download and store the QGIS installers on the shared folder.
 7. Run the QGIS installation following the instruction for the operating system. **!DON'T START UP QGIS!**
@@ -82,7 +82,7 @@ Test cases need to be added to one or more test plans, so that they can be execu
 
 **NOTE**
 
-Reinforcing what as been said before, these test cases should not be a replacement for in-code unit tests, but a complement for situations were unit tests were not possible to implement because of the need to too many user interaction.
+Reinforcing what has been said before, these test cases should not be a replacement for in-code unit tests, but a complement for situations were unit tests were not possible to implement because of the need to too many user interaction.
 
 ---
 
